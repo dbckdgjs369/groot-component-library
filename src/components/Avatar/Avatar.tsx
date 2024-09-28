@@ -1,4 +1,4 @@
-import "./style.css";
+import styles from "./style.module.css";
 
 export default function Avatar({
   src,
@@ -10,6 +10,12 @@ export default function Avatar({
   size?: number;
 }) {
   return (
-    <img className="avatar" alt={alt} src={src} width={size} height={size} />
+    <img
+      className={styles.avatar}
+      alt={alt}
+      src={src}
+      width={size}
+      height={size}
+    />
   );
 }

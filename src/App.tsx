@@ -1,15 +1,22 @@
 import "./index.css";
 import TestImg from "./assets/test.png";
-import { Avatar, Row, Typography } from "./components";
+import { Avatar, Column, Row, Typography } from "./components";
 
 export default function App() {
   return (
     <div>
       Groot Component Library
-      <Typography tag="h2" typoSize="h3" style={{ fontSize: "5px" }}>
+      <Typography tag="h2" typoSize="h3">
         hello
       </Typography>
-      <Row>asg</Row>
+      <Row>
+        <div style={{ border: "1px solid" }}>aaa</div>
+        <div style={{ border: "1px solid" }}>aaa</div>
+      </Row>
+      <Column>
+        <div style={{ border: "1px solid" }}>aaa</div>
+        <div style={{ border: "1px solid" }}>aaa</div>
+      </Column>
       <Avatar src={TestImg} size={36} />
     </div>
   );

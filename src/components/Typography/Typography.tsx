@@ -1,6 +1,6 @@
 import React, { ReactNode, forwardRef } from "react";
 
-import "./style.css";
+import styles from "./style.module.css";
 
 type TypographTypoType =
   | "span"
@@ -34,7 +34,7 @@ const Typography = forwardRef(function Typography(
   ref
 ) {
   const props = {
-    className: `${typoSize}_typo`,
+    className: `${styles[`${typoSize}_typo`]}`,
     ...rest,
   };
   return React.createElement(tag, { ...props, children, ref });
