@@ -1,0 +1,89 @@
+/* 기본 폰트 설정 */
+.body_typo {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Heading 스타일 정의 */
+.h1_typo {
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: -1%;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.h2_typo {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -1%;
+  line-height: 1.25;
+  margin-bottom: 18px;
+}
+
+.h3_typo {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.h4_typo {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+
+.h5_typo {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.h6_typo {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.5%;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+/* Body 텍스트 스타일 정의 */
+.body1_typo {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0;
+  margin-bottom: 20px;
+}
+
+.body2_typo {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
+  margin-bottom: 16px;
+}
+
+/* Subtitle 스타일 정의 */
+.subtitle1_typo {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.05em;
+  margin-bottom: 18px;
+}
+
+.subtitle2_typo {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
