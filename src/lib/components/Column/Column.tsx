@@ -2,7 +2,7 @@ import React, { ReactNode, forwardRef } from "react";
 
 import styles from "./style.module.css";
 
-const Row = forwardRef(function Column(
+const Column = forwardRef(function Column(
   {
     tag = "div",
     children,
@@ -20,4 +20,4 @@ const Row = forwardRef(function Column(
   return React.createElement(tag, { ...props, children, ref });
 });
 
-export default Row;
+export default Column;

@@ -1,13 +1,30 @@
 {
   "name": "groot-component-library",
-  "private": true,
-  "version": "0.0.0",
+  "private": false,
+  "version": "0.0.20",
   "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "browser": "./browser/specific/main.js",
+  "description": "Component library for Groot",
+  "files": [
+    "dist"
+  ],
+  "author": {
+    "name": "yoo chang heon",
+    "email": "dbckdgjs1130@naver.com",
+    "url": "https://github.com/dbckdgjs369"
+  },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/dbckdgjs369"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "rm -rf dist && mkdir dist && tsc && vite build"
   },
   "dependencies": {
     "react": "^18.3.1",
@@ -15,6 +32,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@types/node": "^22.7.4",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
@@ -22,8 +40,10 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
+    "path": "^0.12.7",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^5.4.1"
+    "vite": "^5.4.1",
+    "vite-plugin-dts": "^4.2.2"
   }
 }
