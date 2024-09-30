@@ -1,6 +1,6 @@
 import React, { ReactNode, forwardRef } from "react";
 
-import styles from "./style.module.css";
+import * as S from "./style";
 
 const Row = forwardRef(function Row(
   {
@@ -14,7 +14,7 @@ const Row = forwardRef(function Row(
   ref
 ) {
   const props = {
-    className: `${styles.row}`,
+    css: S.ColumnCss,
     ...rest,
   };
   return React.createElement(tag, { ...props, children, ref });

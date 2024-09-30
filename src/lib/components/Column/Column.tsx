@@ -1,6 +1,6 @@
 import React, { ReactNode, forwardRef } from "react";
 
-import styles from "./style.module.css";
+import * as S from "./style";
 
 const Column = forwardRef(function Column(
   {
@@ -14,7 +14,7 @@ const Column = forwardRef(function Column(
   ref
 ) {
   const props = {
-    className: `${styles.column}`,
+    css: S.ColumnCss,
     ...rest,
   };
   return React.createElement(tag, { ...props, children, ref });
