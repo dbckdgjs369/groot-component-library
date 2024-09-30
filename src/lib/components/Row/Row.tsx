@@ -1,6 +1,12 @@
 import React, { ReactNode, forwardRef } from "react";
 
-import * as S from "./style";
+// import * as S from "./style";
+import { css, jsx } from "@emotion/react";
+
+const ColumnCss = css`
+  display: flex;
+  flex-direction: row;
+`;
 
 const Row = forwardRef(function Row(
   {
@@ -14,10 +20,10 @@ const Row = forwardRef(function Row(
   ref
 ) {
   const props = {
-    css: S.ColumnCss,
+    css: ColumnCss,
     ...rest,
   };
-  return React.createElement(tag, { ...props, children, ref });
+  return jsx(tag, { ...props, children, ref });
 });
 
 export default Row;

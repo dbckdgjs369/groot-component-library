@@ -1,6 +1,9 @@
+/** @jsxImportSource @emotion/react */
+
 import React, { ReactNode, forwardRef } from "react";
 
-import * as S from "./style";
+import * as S from "./styled";
+import { jsx } from "@emotion/react";
 
 type TypographTypoType =
   | "span"
@@ -33,6 +36,7 @@ const typoMap = {
  * tag: Typography의 태그를 정해줍니다.
  * typoSize: Typography의 크기를 정해줍니다.
  */
+console.log("S", S.body1Typo);
 const Typography = forwardRef(function Typography(
   {
     tag = "span",
@@ -47,10 +51,15 @@ const Typography = forwardRef(function Typography(
   ref
 ) {
   const props = {
-    css: typoMap[typoSize], // 동적으로 Emotion 스타일을 적용
     ...rest,
+    css: typoMap[typoSize], // 동적으로 Emotion 스타일을 적용
   };
-  return React.createElement(tag, { ...props, children, ref });
+
+  return jsx(tag, {
+    ...props,
+    children,
+    ref,
+  });
 });
 
 export default Typography;

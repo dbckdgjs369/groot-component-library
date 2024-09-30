@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 import { css } from "@emotion/react";
 
 // Body 텍스트 스타일 정의

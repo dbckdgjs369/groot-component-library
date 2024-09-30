@@ -1,6 +1,7 @@
 import React, { ReactNode, forwardRef } from "react";
 
-import * as S from "./style";
+import * as S from "./styled";
+import { jsx } from "@emotion/react";
 
 const Column = forwardRef(function Column(
   {
@@ -17,7 +18,7 @@ const Column = forwardRef(function Column(
     css: S.ColumnCss,
     ...rest,
   };
-  return React.createElement(tag, { ...props, children, ref });
+  return jsx(tag, { ...props, children, ref });
 });
 
 export default Column;
