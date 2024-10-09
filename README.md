@@ -1,11 +1,11 @@
 # Groot-Component-Library
 
-[npm 링크](https://www.npmjs.com/package/groot-component-library?activeTab=readme)
+Component Library for Groot!
 
-version 0.0.26
+## Components
 
-## 컴포넌트 목록
 - Row
 - Column
 - Avatar
 - Typography
+- Button
