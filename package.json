@@ -1,7 +1,7 @@
 {
   "name": "groot-component-library",
   "private": false,
-  "version": "0.0.26",
+  "version": "0.0.29",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -26,7 +26,10 @@
     "build": "tsc && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prepare": "rm -rf dist && mkdir dist && tsc && vite build"
+    "prepare": "rm -rf dist && mkdir dist && tsc && vite build",
+    "version:patch": "npm version patch --no-git-tag-version && npm publish",
+    "version:minor": "npm version minor --no-git-tag-version && npm publish",
+    "version:major": "npm version major --no-git-tag-version && npm publish"
   },
   "dependencies": {
     "@emotion/babel-plugin": "^11.12.0",
