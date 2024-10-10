@@ -5,12 +5,12 @@ import * as S from "./styled";
 const Button = forwardRef(
   (
     {
-      color,
+      color = "white",
       backgroundColor,
       children,
     }: {
-      color: string;
-      backgroundColor: string;
+      color?: string;
+      backgroundColor?: string;
       children: ReactNode;
     } & React.ButtonHTMLAttributes<HTMLButtonElement>,
     ref: React.ForwardedRef<HTMLButtonElement>
