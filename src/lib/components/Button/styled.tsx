@@ -11,7 +11,7 @@ export const StyledButton = styled.button`
     filter: brightness(0.8);
   }
   :disabled {
-    background-color: #ddd;
+    background-color: #ddd !important;
     cursor: not-allowed;
   }
 `;
