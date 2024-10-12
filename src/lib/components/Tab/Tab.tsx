@@ -1,31 +1,30 @@
-import { ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 
 import { TabList } from "./TabList";
 import { TabPanel } from "./TabPanel";
 import { TabProvider, useTabContext } from "./TabContext";
+import * as S from "./styled";
 
-interface TabProps {
+interface TabProps extends HTMLAttributes<HTMLButtonElement> {
   value: string;
   children: ReactNode;
 }
 
-function Tab({ value, children }: TabProps) {
+function Tab({ value, children, style, ...rest }: TabProps) {
   const { activeTab, setActiveTab } = useTabContext();
 
   const isActive = activeTab === value;
 
   return (
-    <button
+    <S.StyledTab
+      isActive={isActive}
       onClick={() => setActiveTab(value)}
-      style={{
-        padding: "10px 20px",
-        cursor: "pointer",
-        backgroundColor: isActive ? "#007bff" : "#f0f0f0",
-        color: isActive ? "#fff" : "#000",
-      }}
+      value={value}
+      style={{ ...style }}
+      {...rest}
     >
       {children}
-    </button>
+    </S.StyledTab>
   );
 }
 
