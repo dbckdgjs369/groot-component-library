@@ -7,7 +7,11 @@ export const StyledButton = styled.button`
   border-radius: 4px;
   border: none;
   cursor: pointer;
-  &:hover {
+  :not(:disabled):hover {
     filter: brightness(0.8);
+  }
+  :disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
   }
 `;

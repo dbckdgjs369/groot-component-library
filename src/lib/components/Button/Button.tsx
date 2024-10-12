@@ -19,8 +19,12 @@ const Button = forwardRef(
     return (
       <S.StyledButton
         ref={ref}
-        style={{ color: color, backgroundColor: backgroundColor }}
         {...rest}
+        style={{
+          color: color,
+          backgroundColor: backgroundColor,
+          ...rest.style,
+        }}
       >
         {children}
       </S.StyledButton>
