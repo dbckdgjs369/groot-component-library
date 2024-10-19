@@ -4,12 +4,21 @@ import React, { ReactNode, forwardRef } from "react";
 import * as S from "./styled";
 
 /**
- * Element that flex is column
+ * Column component for creating a vertical layout with customizable gap between items.
  *
- * @param tag - Select HTML tag
- * @param gap - gap
+ * @param {string} tag - The HTML tag to use for rendering the column.
+ *                       Default is "div".
+ * @param {number} gap - The space between child elements.
  *
- * @returns Element that flex is column
+ * @param {React.Node} children - The content to be rendered within the column component.
+ *
+ * @example
+ * <Column tag="div" gap={20}>
+ *   <ChildComponent />
+ *   <ChildComponent />
+ * </Column>
+ *
+ * @returns {JSX.Element} The rendered column element.
  */
 
 const Column = forwardRef(function Column(

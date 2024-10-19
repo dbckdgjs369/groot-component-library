@@ -15,11 +15,19 @@ interface TabListProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 /**
- * Parent of Tab component
+ * TabList component for rendering a list of tabs in a tabbed interface.
  *
- * @param tabColor - Color of selected tab underbar color
+ * @param {string} tabColor - The color of the underbar for the selected tab.
+ *                            This can be a hex code, rgba, or any valid CSS color value.
+ * @param {React.Node} children - The Tab components to be rendered within the TabList.
  *
- * @returns TabList that wraps Tab component.
+ * @example
+ * <TabList tabColor="#007bff">
+ *   <Tab value="tab1">Tab 1</Tab>
+ *   <Tab value="tab2">Tab 2</Tab>
+ * </TabList>
+ *
+ * @returns {JSX.Element} The rendered tab list element.
  */
 
 export function TabList({ tabColor, children, style, ...rest }: TabListProps) {

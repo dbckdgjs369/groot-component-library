@@ -4,12 +4,21 @@ import React, { ReactNode, forwardRef } from "react";
 import * as S from "./styled";
 
 /**
- * Element that flex is row
+ * Row component for creating a horizontal layout with customizable gap between items.
  *
- * @param tag - Select HTML tag
- * @param gap - gap
+ * @param {string} tag - The HTML tag to use for rendering the row.
+ *                       Default is "div".
+ * @param {number} gap - The space between child elements.
  *
- * @returns Element that flex is row
+ * @param {React.Node} children - The content to be rendered within the row component.
+ *
+ * @example
+ * <Row tag="div" gap={20}>
+ *   <ChildComponent />
+ *   <ChildComponent />
+ * </Row>
+ *
+ * @returns {JSX.Element} The rendered row element.
  */
 
 const Row = forwardRef(function Row(

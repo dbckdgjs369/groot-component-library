@@ -33,10 +33,20 @@ const typoMap = {
 };
 
 /**
- * tag: Typography의 태그를 정해줍니다.
- * typoSize: Typography의 크기를 정해줍니다.
+ * Typography component for rendering text with different HTML tags and typography sizes.
+ *
+ * @param {string} tag - The HTML tag to use for rendering the text.
+ *                        Default is "span".
+ * @param {string} typoSize - The typography size to apply to the text.
+ *                            Default is "span".
+ * @param {React.Node} children - The content to be rendered within the typography component.
+ *
+ * @example
+ * <Typography tag="h1" typoSize="large">This is a heading</Typography>
+ *
+ * @returns {JSX.Element} The rendered typography element.
  */
-console.log("S", S.body1Typo);
+
 const Typography = forwardRef(function Typography(
   {
     tag = "span",

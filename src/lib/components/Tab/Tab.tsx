@@ -11,12 +11,18 @@ interface TabProps extends HTMLAttributes<HTMLButtonElement> {
 }
 
 /**
- * Tab Component that controls which Tabpanel to open
+ * Tab component for representing a single tab in a tabbed interface.
  *
- * @param value - value inside Tab component
+ * @param {string} value - The unique identifier for the tab. This is used to control
+ *                         which tab is active and to handle tab selection events.
+ * @param {React.Node} children - The content to be displayed within the tab.
  *
- * @returns Tab component that used inside Tab.List component
+ * @example
+ * <Tab value="tab1">Tab 1</Tab>
+ *
+ * @returns {JSX.Element} The rendered tab element.
  */
+
 function Tab({ value, children, style, ...rest }: TabProps) {
   const { activeTab, setActiveTab } = useTabContext();
 

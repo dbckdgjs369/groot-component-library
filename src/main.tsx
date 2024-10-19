@@ -1,0 +1,41 @@
+import ReactDOM from "react-dom/client";
+import { Button, Row } from "./lib";
+import Tab from "./lib/components/Tab/Tab";
+// import { Button, Row, Typography } from "./lib/components";
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  <>
+    {/* <Row> */}
+    {/* <Typography typoSize="h1" as>
+        asdg
+      </Typography> */}
+    <Button
+      type="button"
+      backgroundColor="red"
+      style={{ width: "200px" }}
+      disabled
+    >
+      asdg
+    </Button>
+    <Tab.Provider defaultTab="Tab 1">
+      <Tab.List style={{ width: "500px" }} tabColor="red">
+        <Tab value="Tab 1">Tab 1</Tab>
+        <Tab value="Tab 2">Tab 2</Tab>
+        <Tab value="Tab 3">Tab 3</Tab>
+      </Tab.List>
+      <Tab.Panel value="Tab 1">
+        <div style={{ width: "500px", height: "500px", border: "1px solid" }}>
+          a
+        </div>
+      </Tab.Panel>
+      <Tab.Panel value="Tab 2">b</Tab.Panel>
+      <Tab.Panel value="Tab 3">c</Tab.Panel>
+      <Row gap={30}>
+        <div>asdg</div>
+        <div>asdg</div>
+        <div>asdg</div>
+        <div>asdg</div>
+      </Row>
+    </Tab.Provider>
+  </>
+);
