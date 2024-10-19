@@ -10,6 +10,13 @@ interface TabProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
 }
 
+/**
+ * Tab Component that controls which Tabpanel to open
+ *
+ * @param value - value inside Tab component
+ *
+ * @returns Tab component that used inside Tab.List component
+ */
 function Tab({ value, children, style, ...rest }: TabProps) {
   const { activeTab, setActiveTab } = useTabContext();
 

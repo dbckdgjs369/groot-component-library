@@ -19,6 +19,14 @@ export const useTabContext = () => {
   return context;
 };
 
+/**
+ * Must use Tab related components inside TabContext
+ *
+ * @param defaultTab - default tab that opens first
+ *
+ * @returns TabProvider that handles tab state.
+ */
+
 export function TabProvider({ children, defaultTab }: TabProviderProps) {
   const [activeTab, setActiveTab] = useState<string>(defaultTab);
 

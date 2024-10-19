@@ -14,6 +14,14 @@ interface TabListProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 
+/**
+ * Parent of Tab component
+ *
+ * @param tabColor - Color of selected tab underbar color
+ *
+ * @returns TabList that wraps Tab component.
+ */
+
 export function TabList({ tabColor, children, style, ...rest }: TabListProps) {
   const { activeTab } = useTabContext();
   const tabListRef = useRef<HTMLDivElement | null>(null);
