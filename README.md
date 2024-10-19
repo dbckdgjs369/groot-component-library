@@ -9,3 +9,4 @@ Component Library for Groot!
 - Avatar
 - Typography
 - Button
+- Tab
