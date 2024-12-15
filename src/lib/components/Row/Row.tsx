@@ -1,7 +1,6 @@
-import { jsx } from "@emotion/react";
 import React, { ReactNode, forwardRef } from "react";
 
-import * as S from "./styled";
+import styles from "./Row.module.css";
 
 /**
  * Row component for creating a horizontal layout with customizable gap between items.
@@ -24,7 +23,7 @@ import * as S from "./styled";
 const Row = forwardRef(function Row(
   {
     tag = "div",
-    gap,
+    gap = 0,
     children,
     ...rest
   }: {
@@ -34,11 +33,18 @@ const Row = forwardRef(function Row(
   } & React.HTMLAttributes<HTMLElement>,
   ref
 ) {
-  const props = {
-    css: S.RowCss({ gap: gap }),
-    ...rest,
-  };
-  return jsx(tag, { ...props, children, ref });
+  const style = { ...rest.style, gap: `${gap}px` };
+
+  return React.createElement(
+    tag,
+    {
+      ...rest,
+      ref,
+      className: styles.column, // 기본 스타일 적용
+      style,
+    },
+    children
+  );
 });
 
 export default Row;

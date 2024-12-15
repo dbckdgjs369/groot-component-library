@@ -1,24 +1,22 @@
 import ReactDOM from "react-dom/client";
-import { Button, Row } from "./lib";
+import { Avatar, Button, Column, Row, Typography } from "./lib";
 import Tab from "./lib/components/Tab/Tab";
 // import { Button, Row, Typography } from "./lib/components";
+import Src from "../public/groot.png";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <>
+  <div>
     {/* <Row> */}
     {/* <Typography typoSize="h1" as>
         asdg
       </Typography> */}
-    <Button
-      type="button"
-      backgroundColor="red"
-      style={{ width: "200px" }}
-      disabled
-    >
-      asdg
-    </Button>
+    <Avatar src={Src} />
+    <Button color="red">asdg</Button>
+    <Typography typoSize="h4">asdg</Typography>
+    <Column>asgd</Column>
+    <Column>asgd2</Column>
     <Tab.Provider defaultTab="Tab 1">
-      <Tab.List style={{ width: "500px" }} tabColor="red">
+      <Tab.List style={{ width: "100px" }} tabColor="red">
         <Tab value="Tab 1">Tab 1</Tab>
         <Tab value="Tab 2">Tab 2</Tab>
         <Tab value="Tab 3">Tab 3</Tab>
@@ -37,5 +35,5 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <div>asdg</div>
       </Row>
     </Tab.Provider>
-  </>
+  </div>
 );

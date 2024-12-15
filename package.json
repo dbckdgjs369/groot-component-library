@@ -1,11 +1,17 @@
 {
   "name": "groot-component-library",
   "private": false,
-  "version": "0.0.41",
+  "version": "0.0.49",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "dist/lib/index.js",
+      "require": "dist/lib/index.js"
+    }
+  },
   "browser": "./browser/specific/main.js",
   "style": "dist/style.css",
   "description": "Component library for Groot",
@@ -32,11 +38,9 @@
     "version:major": "npm version major --no-git-tag-version && npm publish"
   },
   "dependencies": {
-    "@emotion/babel-plugin": "^11.12.0",
-    "@emotion/react": "^11.13.3",
-    "@emotion/styled": "^11.13.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "vite-plugin-css-injected-by-js": "^3.5.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
@@ -52,6 +56,6 @@
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1",
-    "vite-plugin-dts": "^4.2.2"
+    "vite-plugin-dts": "^4.3.0"
   }
 }

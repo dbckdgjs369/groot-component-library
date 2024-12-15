@@ -10,3 +10,4 @@ Component Library for Groot!
 - Typography
 - Button
 - Tab
+- Table

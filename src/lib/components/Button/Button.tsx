@@ -1,6 +1,6 @@
 import { ReactNode, forwardRef } from "react";
 
-import * as S from "./styled";
+import styles from "./Button.module.css";
 
 const Button = forwardRef(
   (
@@ -17,9 +17,10 @@ const Button = forwardRef(
     ref: React.ForwardedRef<HTMLButtonElement>
   ) => {
     return (
-      <S.StyledButton
+      <button
         ref={ref}
         {...rest}
+        className={styles.button}
         style={{
           color: color,
           backgroundColor: backgroundColor,
@@ -27,7 +28,7 @@ const Button = forwardRef(
         }}
       >
         {children}
-      </S.StyledButton>
+      </button>
     );
   }
 );
