@@ -1,32 +1,32 @@
-//
-
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 
+import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
+
 export default defineConfig({
   plugins: [
     react(),
+    cssInjectedByJsPlugin(),
     dts({
       insertTypesEntry: true,
-      outDir: "dist", // dist 폴더로 타입 선언을 출력
+      outDir: "dist",
     }),
   ],
   build: {
     lib: {
       entry: "src/index.ts",
-      name: "grootComponentLibrary",
+      name: "index",
       fileName: (format) => `index.${format}.js`,
       formats: ["es", "cjs"],
     },
     rollupOptions: {
-      external: ["react", "react-dom"], // react와 react-dom은 외부 의존성으로 설정
+      external: ["react", "react-dom"],
       output: {
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
         },
-        assetFileNames: "lib/[name].[ext]",
       },
     },
   },

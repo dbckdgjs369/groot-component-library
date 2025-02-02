@@ -1,7 +1,5 @@
 import React, { ReactNode, forwardRef } from "react";
 
-import styles from "./Row.module.css";
-
 /**
  * Row component for creating a horizontal layout with customizable gap between items.
  *
@@ -33,15 +31,14 @@ const Row = forwardRef(function Row(
   } & React.HTMLAttributes<HTMLElement>,
   ref
 ) {
-  const style = { ...rest.style, gap: `${gap}px` };
+  const style = { display: "flex", flexDirection: "row", gap: `${gap}px` };
 
   return React.createElement(
     tag,
     {
-      ...rest,
       ref,
-      className: styles.column, // 기본 스타일 적용
-      style,
+      ...rest,
+      style: { ...style, ...rest.style },
     },
     children
   );
