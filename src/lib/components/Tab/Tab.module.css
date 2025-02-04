@@ -1,0 +1,16 @@
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  position: relative;
+  color: #000;
+  font-weight: normal;
+  transition: color 0.3s ease-in-out;
+}
+
+.tab.active {
+  color: #007bff;
+  font-weight: bold;
+}

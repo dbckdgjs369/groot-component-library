@@ -1,35 +1,19 @@
-/** @jsxImportSource @emotion/react */
+import { createElement, forwardRef, ReactNode } from "react";
 
-import React, { ReactNode, forwardRef } from "react";
-
-import * as S from "./styled";
-import { jsx } from "@emotion/react";
-
-type TypographTypoType =
-  | "span"
-  | "h1"
-  | "h2"
-  | "h3"
-  | "h4"
-  | "h5"
-  | "h6"
-  | "body1"
-  | "body2"
-  | "subtitle1"
-  | "subtitle2";
+import styles from "./Typography.module.css";
 
 const typoMap = {
-  h1: S.h1Typo,
-  h2: S.h2Typo,
-  h3: S.h3Typo,
-  h4: S.h4Typo,
-  h5: S.h5Typo,
-  h6: S.h6Typo,
-  body1: S.body1Typo,
-  body2: S.body2Typo,
-  subtitle1: S.subtitle1Typo,
-  subtitle2: S.subtitle2Typo,
-  span: S.spanType,
+  h1: styles.h1Typo,
+  h2: styles.h2Typo,
+  h3: styles.h3Typo,
+  h4: styles.h4Typo,
+  h5: styles.h5Typo,
+  h6: styles.h6Typo,
+  body1: styles.body1Typo,
+  body2: styles.body2Typo,
+  subtitle1: styles.subtitle1Typo,
+  subtitle2: styles.subtitle2Typo,
+  span: styles.spanTypo,
 };
 
 /**
@@ -55,17 +39,17 @@ const Typography = forwardRef(function Typography(
     ...rest
   }: {
     tag?: keyof HTMLElementTagNameMap;
-    typoSize?: TypographTypoType;
+    typoSize?: keyof typeof typoMap;
     children: ReactNode;
   } & React.HTMLAttributes<HTMLElement>,
   ref
 ) {
   const props = {
     ...rest,
-    css: typoMap[typoSize], // 동적으로 Emotion 스타일을 적용
+    className: `${rest.className || ""} ${typoMap[typoSize] || ""}`.trim(), // 클래스명 추가
   };
 
-  return jsx(tag, {
+  return createElement(tag, {
     ...props,
     children,
     ref,

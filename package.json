@@ -1,10 +1,17 @@
 {
   "name": "groot-component-library",
   "private": false,
-  "version": "0.0.41",
+  "version": "0.0.68",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "types": "dist/index.d.ts",
   "browser": "./browser/specific/main.js",
   "style": "dist/style.css",
@@ -32,9 +39,7 @@
     "version:major": "npm version major --no-git-tag-version && npm publish"
   },
   "dependencies": {
-    "@emotion/babel-plugin": "^11.12.0",
-    "@emotion/react": "^11.13.3",
-    "@emotion/styled": "^11.13.0",
+    "@vituum/vite-plugin-postcss": "^1.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
@@ -52,6 +57,7 @@
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1",
-    "vite-plugin-dts": "^4.2.2"
+    "vite-plugin-css-injected-by-js": "^3.5.2",
+    "vite-plugin-dts": "^4.3.0"
   }
 }

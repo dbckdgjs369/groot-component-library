@@ -1,4 +1,4 @@
-import * as S from "./styled";
+import "./style.css";
 
 export default function Avatar({
   src,
@@ -9,5 +9,5 @@ export default function Avatar({
   src: string;
   size?: number;
 }) {
-  return <S.StyledAvatar alt={alt} src={src} width={size} height={size} />;
+  return <img id="avatar" alt={alt} src={src} width={size} height={size} />;
 }

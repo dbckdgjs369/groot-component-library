@@ -2,14 +2,12 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 
+import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
+
 export default defineConfig({
   plugins: [
-    react({
-      jsxImportSource: "@emotion/react",
-      babel: {
-        plugins: ["@emotion/babel-plugin"],
-      },
-    }),
+    react(),
+    cssInjectedByJsPlugin(),
     dts({
       insertTypesEntry: true,
       outDir: "dist",
@@ -23,7 +21,7 @@ export default defineConfig({
       formats: ["es", "cjs"],
     },
     rollupOptions: {
-      external: ["react", "react-dom", "@emotion/react", "@emotion/styled"],
+      external: ["react", "react-dom"],
       output: {
         globals: {
           react: "React",

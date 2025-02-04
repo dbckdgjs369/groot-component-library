@@ -1,9 +1,8 @@
 import { HTMLAttributes, ReactNode } from "react";
-
 import { TabList } from "./TabList";
 import { TabPanel } from "./TabPanel";
 import { TabProvider, useTabContext } from "./TabContext";
-import * as S from "./styled";
+import styles from "./Tab.module.css";
 
 interface TabProps extends HTMLAttributes<HTMLButtonElement> {
   value: string;
@@ -22,22 +21,24 @@ interface TabProps extends HTMLAttributes<HTMLButtonElement> {
  *
  * @returns {JSX.Element} The rendered tab element.
  */
-
 function Tab({ value, children, style, ...rest }: TabProps) {
   const { activeTab, setActiveTab } = useTabContext();
 
   const isActive = activeTab === value;
 
+  // 동적으로 클래스명 설정
+  const className = `${styles.tab} ${isActive ? styles.active : ""}`.trim();
+
   return (
-    <S.StyledTab
-      isActive={isActive}
+    <button
       onClick={() => setActiveTab(value)}
       value={value}
+      className={className}
       style={{ ...style }}
       {...rest}
     >
       {children}
-    </S.StyledTab>
+    </button>
   );
 }
 

@@ -7,7 +7,7 @@ import React, {
 } from "react";
 
 import { useTabContext } from "./TabContext";
-import * as S from "./styled";
+import styles from "./TabList.module.css";
 
 interface TabListProps extends HTMLAttributes<HTMLDivElement> {
   tabColor?: string;
@@ -29,7 +29,6 @@ interface TabListProps extends HTMLAttributes<HTMLDivElement> {
  *
  * @returns {JSX.Element} The rendered tab list element.
  */
-
 export function TabList({ tabColor, children, style, ...rest }: TabListProps) {
   const { activeTab } = useTabContext();
   const tabListRef = useRef<HTMLDivElement | null>(null);
@@ -51,14 +50,20 @@ export function TabList({ tabColor, children, style, ...rest }: TabListProps) {
   }, [activeTab]);
 
   return (
-    <S.StyledTabList ref={tabListRef} style={{ ...style }} {...rest}>
+    <div
+      ref={tabListRef}
+      className={styles.tabList}
+      style={{ ...style }}
+      {...rest}
+    >
       {children}
-      <S.StyledTabList
-        css={S.TabUnderLineCss(tabColor)}
+      <div
+        className={styles.underline}
         style={{
           ...underlineStyle,
+          backgroundColor: tabColor || "#007bff", // 동적 색상 설정
         }}
       />
-    </S.StyledTabList>
+    </div>
   );
 }

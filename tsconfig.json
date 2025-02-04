@@ -22,8 +22,7 @@
     "declarationDir": "./dist",
     "noImplicitAny": true,
     "typeRoots": ["index.d.ts"],
-    "rootDir": "./src",
-    "jsxImportSource": "@emotion/react"
+    "rootDir": "./src"
   },
   "include": ["src", "globals.d.ts"]
 }

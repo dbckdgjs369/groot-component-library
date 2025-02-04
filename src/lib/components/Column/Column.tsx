@@ -1,15 +1,11 @@
-import { jsx } from "@emotion/react";
 import React, { ReactNode, forwardRef } from "react";
-
-import * as S from "./styled";
 
 /**
  * Column component for creating a vertical layout with customizable gap between items.
  *
  * @param {string} tag - The HTML tag to use for rendering the column.
  *                       Default is "div".
- * @param {number} gap - The space between child elements.
- *
+ * @param {number} gap - The space between child elements, dynamically applied in px.
  * @param {React.Node} children - The content to be rendered within the column component.
  *
  * @example
@@ -24,7 +20,7 @@ import * as S from "./styled";
 const Column = forwardRef(function Column(
   {
     tag = "div",
-    gap,
+    gap = 0,
     children,
     ...rest
   }: {
@@ -34,11 +30,17 @@ const Column = forwardRef(function Column(
   } & React.HTMLAttributes<HTMLElement>,
   ref
 ) {
-  const props = {
-    css: S.ColumnCss({ gap: gap }),
-    ...rest,
-  };
-  return jsx(tag, { ...props, children, ref });
+  const style = { display: "flex", flexDirection: "column", gap: `${gap}px` };
+
+  return React.createElement(
+    tag,
+    {
+      ref,
+      ...rest,
+      style: { ...style, ...rest.style },
+    },
+    children
+  );
 });
 
 export default Column;

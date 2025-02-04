@@ -1,0 +1,12 @@
+.tabList {
+  position: relative;
+  display: flex;
+}
+
+.underline {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--underline-color, #007bff); /* 동적 색상 */
+  transition: width 0.3s ease, left 0.3s ease;
+}
