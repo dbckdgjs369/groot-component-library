@@ -1,0 +1,8 @@
+.selected {
+  background-color: gray;
+  color: white;
+}
+
+.not_selected {
+  background-color: blue;
+}

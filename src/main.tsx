@@ -3,6 +3,60 @@ import { Avatar, Button, Column, Row, Typography } from "./lib";
 import Tab from "./lib/components/Tab/Tab";
 // import { Button, Row, Typography } from "./lib/components";
 import Src from "../public/groot.png";
+import Table from "./lib/components/Table";
+
+const dummyHeader = [
+  {
+    label: "a",
+    id: "a",
+  },
+  {
+    label: "b",
+    id: "b",
+  },
+  {
+    label: "c",
+    id: "c",
+  },
+  {
+    label: "d",
+    id: "d",
+  },
+];
+
+interface DummyTableInterface {
+  a: string;
+  b: string;
+  c: string;
+}
+
+const dummyData: DummyTableInterface[] = [
+  {
+    a: "1",
+    b: "2",
+    c: "3",
+  },
+  {
+    a: "1",
+    b: "2",
+    c: "3",
+  },
+  {
+    a: "1",
+    b: "2",
+    c: "3",
+  },
+  {
+    a: "1",
+    b: "2",
+    c: "3",
+  },
+  {
+    a: "1",
+    b: "2",
+    c: "3",
+  },
+];
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <div>
@@ -34,6 +88,16 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <div>asdg</div>
         <div>asdg</div>
       </Row>
+      table
+      <Table
+        tableHeaders={dummyHeader}
+        data={dummyData}
+        tdList={(row) => ({
+          a: <span>{row.a}</span>,
+          b: <span>{row.b}세</span>,
+          c: <span>{row.c}세</span>,
+        })}
+      />
     </Tab.Provider>
   </div>
 );
